@@ -76,8 +76,9 @@ go version
 # download binary
 cd $HOME
 git clone https://github.com/empowerchain/empowerchain
-cd empowerchain/chain
-git checkout v0.0.1
+cd empowerchain
+git checkout v0.0.2
+cd chain
 make install
 
 # config
