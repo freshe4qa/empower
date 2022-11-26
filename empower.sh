@@ -77,7 +77,7 @@ go version
 cd $HOME
 git clone https://github.com/empowerchain/empowerchain
 cd empowerchain
-git checkout v0.0.2
+git checkout v0.0.3
 cd chain
 make install
 
