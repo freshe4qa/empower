@@ -129,6 +129,11 @@ LimitNOFILE=10000
 WantedBy=multi-user.target
 EOF
 
+rm -rf $HOME/.empowerchain/data 
+
+SNAP_NAME=$(curl -s https://snapshots2-testnet.nodejumper.io/empower-testnet/ | egrep -o ">altruistic-1.*\.tar.lz4" | tr -d ">")
+curl https://snapshots2-testnet.nodejumper.io/empower-testnet/${SNAP_NAME} | lz4 -dc - | tar -xf - -C $HOME/.empowerchain
+
 # start service
 systemctl daemon-reload && \
 systemctl enable empowerd && \
