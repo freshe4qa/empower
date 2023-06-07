@@ -57,17 +57,14 @@ sudo apt update && sudo apt upgrade -y
 apt install curl build-essential git wget jq make gcc tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev -y
 
 # install go
-cd $HOME
-if [ ! -f "/usr/local/go/bin/go" ]; then
-    VERSION=1.19.6
-    wget -O go.tar.gz https://go.dev/dl/go$VERSION.linux-amd64.tar.gz
-    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go.tar.gz && rm go.tar.gz
-    echo 'export GOROOT=/usr/local/go' >> $HOME/.bash_profile
-    echo 'export GOPATH=$HOME/go' >> $HOME/.bash_profile
-    echo 'export GO111MODULE=on' >> $HOME/.bash_profile
-    echo 'export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin' >> $HOME/.bash_profile && . $HOME/.bash_profile
-    go version
-fi
+ver="1.20.3" && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> $HOME/.bash_profile && \
+source $HOME/.bash_profile && \
+go version
 
 # download binary
 cd $HOME
