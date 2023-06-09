@@ -70,7 +70,7 @@ go version
 cd $HOME
 git clone https://github.com/EmpowerPlastic/empowerchain
 cd empowerchain/chain
-git checkout v1.0.0-rc1
+git checkout v1.0.0-rc2
 make install
 
 # config
