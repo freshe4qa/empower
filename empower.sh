@@ -127,7 +127,7 @@ EOF
 
 # reset
 empowerd tendermint unsafe-reset-all --home $HOME/.empowerchain --keep-addr-book 
-curl https://snapshots2-testnet.nodejumper.io/empower-testnet/circulus-1_2023-06-07.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.empowerchain
+curl https://snapshots2-testnet.nodejumper.io/empower-testnet/circulus-1_2023-06-09.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.empowerchain
 
 # start service
 sudo systemctl daemon-reload
