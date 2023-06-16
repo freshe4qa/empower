@@ -70,7 +70,7 @@ go version
 cd $HOME
 git clone https://github.com/EmpowerPlastic/empowerchain
 cd empowerchain/chain
-git checkout v1.0.0-rc2
+git checkout v1.0.0-rc3
 make install
 
 # config
@@ -127,7 +127,7 @@ EOF
 
 # reset
 empowerd tendermint unsafe-reset-all --home $HOME/.empowerchain --keep-addr-book 
-curl https://snapshots2-testnet.nodejumper.io/empower-testnet/circulus-1_2023-06-15.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.empowerchain
+curl https://snapshots2-testnet.nodejumper.io/empower-testnet/circulus-1_2023-06-16.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.empowerchain
 
 # start service
 sudo systemctl daemon-reload
